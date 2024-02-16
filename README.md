@@ -16,7 +16,7 @@
 4. Aperte "Ir para recurso" e após isso em "Iniciar o estúdio".
 
 
-## Passo 2: Criação do Modelo
+## Passo 2: Criação do trabalho de ML automatizado
 
 
 1. No menu lateral do estúdio, encontre ML automatizado e clique em "Novo trabalho de ML automatizado".
@@ -65,3 +65,58 @@
 
 17. Pressione avançar.
 
+18. Por fim, pressione "Enviar trabalho de treinamento".
+
+## Passo 3: Crie um Modelo
+
+
+1. Acesse a página do trabalho realizado e pressione "Modelo de registro".
+
+2. Deixe as opções padrões para "Selecionar saída". 
+
+3. Em "Configurações do modelo", preencha o nome e a versão. 
+
+4. Clique em criar o modelo.
+## Passo 4: Teste do Modelo
+
+1. No menu, acesse "Pontos de extremidade".
+
+2. Clique em "Criar" e em seguida marque o modelo.
+
+3. Deixe todos os campos com os valores padrões, exceto "Contagem de instâncias", deixe esse como 1.
+
+4. Por fim, pressione "Implantar".
+
+5. Em seguida, vai ser processado e vai demorar um pouco.
+
+6. No ponto de extremidade, quando tiver tudo pronto informe os dados do JSON abaixo e pressione "Testar":
+
+<code>
+{
+  "input_data": {
+    "data": [
+       {
+         "day": 1,
+         "mnth": 1,   
+         "year": 2022,
+         "season": 2,
+         "holiday": 0,
+         "weekday": 1,
+         "workingday": 1,
+         "weathersit": 2, 
+         "temp": 0.3, 
+         "atemp": 0.3,
+         "hum": 0.3,
+         "windspeed": 0.3 
+       }
+     ]
+  }
+}
+</code>
+
+7. O resultado obtido foi esse: 
+<code>
+[1 item
+    0:float341.203802832822
+]
+</code>
